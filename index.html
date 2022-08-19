@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Cocktail Generator</title>
+</head>
+<body id="main_header">
+    <h1>Cocktail Generator</h1>
+    <h2 id="intro">Choose a button from each of the 3 selectors below to tell us your preferences. Then we'll use this to choose your drink!</h2>
+        <div id="content">
+            <div class="section one">
+                <h3>Select your preferred base spirit:</h3>
+                <button type="button" id="s1" class="button" onclick="storeVarSpirit(this)" value="Vodka">Vodka</button>
+                <button type="button" id="s2" class="button" onclick="storeVarSpirit(this)" value="Gin">Gin</button>
+                <button type="button" id="s3" class="button" onclick="storeVarSpirit(this)" value="Whiskey">Whisky</button>
+                <button type="button" id="s4" class="button" onclick="storeVarSpirit(this)" value="Rum">Rum</button>
+                <button type="button" id="s5" class="button" onclick="storeVarSpirit(this)" value="Tequila">Tequila</button>
+                <button type="button" id="s6" class="button" onclick="storeVarSpirit(this)" value="Wine Spirits">Wine Spirits</button>
+                <button type="button" id="s7" class="button" onclick="storeVarSpirit(this)" value="Liqueur">Liqueur</button>
+                <button type="button" id="s8" class="button" onclick="storeVarSpirit(this)" value="Other">Other</button>
+
+                <p id="chosenSpirit">Your chosen spirit: </p>
+            </div>
+
+            <div class="section two">
+                <h3>Select your preferred modifier (how it tastes):</h3>
+                <button type="button" class="modifier1 button" onclick="storeVarModifier(this)" value="Sweet">Sweet</button>
+                <button type="button" class="modifier2 button" onclick="storeVarModifier(this)" value="Dry">Dry</button>
+                <button type="button" class="modifier3 button" onclick="storeVarModifier(this)" value="Acidic">Acidic</button>
+
+               <p id="chosenMod">Your chosen modifier: </p>
+            </div>
+
+            <div class="section three">
+                <h3>Select your preferred <strong>type</strong> (what kind of cocktail it is):</h3>
+                <button type="button" class="type1 button" onclick="storeVarType(this)" value="Classic">Classic</button>
+                <button type="button" class="type2 button" onclick="storeVarType(this)" value="Exotic">Exotic</button>
+                <button type="button" class="type3 button" onclick="storeVarType(this)" value="Festive">Festive</button>
+
+                <p id="chosenType">Your chosen type: </p>
+            </div>
+
+            <!-- RESULT -->
+
+            <div id="results" class="section execute"> 
+                <button type="button" class="execute_button" onclick="selectionProcess(allDrinks)" value="execute">Generate Cocktail</button> <!-- GENERATE COCKTAIL BUTTON -->
+                <button type="button" id="buttonToTop" onclick="scrollToLocation('main_header')">Back To Top</button>
+                <!-- <button type="button" class="reset button" onclick="reset()" value="Reset">Reset Selections</button> --> <!-- RESET BUTTON -->
+            </div>
+            <div id="result_section">
+                <p id="result_p"></p>
+                <h3 id="result_heading"><a id="title_anchor" href="#" onclick="(window.open(storedLink))"></a></h3>
+                <figure id="result_figure">
+                    <img id="result_img" onload="scrollToLocation('results')">
+                    <figcaption id="result_figcap">
+                    </figcaption>
+                    <div id="end_section">
+                        <a id="readMore" href="#" onclick="(window.open(storedLink))">Read more...</a>
+                    </div>
+                </figure>
+            </div>
+        </div>
+</body>
+</html>
